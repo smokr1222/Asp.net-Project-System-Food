@@ -1,0 +1,36 @@
+﻿@using systemFood.ViewModel.Catogry
+@model AddNewCategoryViewModel
+@{
+    ViewData["Title"] = "AddNewCatogry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="modal-content relative w-full sm:w-11/12 md:w-2/3 lg:w-1/2 p-6 bg-white rounded-2xl shadow-xl flex flex-col">
+    <a class="close-button absolute top-4 right-6 text-gray-500 hover:text-gray-800 text-3xl" asp-action="MineProduct" asp-controller="Settings" id="close-add-category-modal">&times;</a>
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">إضافة فئة جديدة</h2>
+
+     <form method="post">
+
+
+        <div class="flex flex-col space-y-4">
+            <div>
+                <label asp-for="Name" class="block text-gray-700 text-sm font-semibold mb-2">اسم الفئة</label>
+                <input type="text" asp-for="Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="مثال: حلويات، مقبلات">
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <label asp-for="Icon" class="block text-gray-700 text-sm font-semibold mb-2">أيقونة (فئة Font Awesome)</label>
+                <input type="text" asp-for="Icon" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="مثال: fas fa-ice-cream">
+                <p class="text-xs text-gray-500 mt-1">قم بزيارة <a href="https://fontawesome.com/icons" target="_blank" class="text-blue-500 hover:underline">Font Awesome</a> لفئات الأيقونات.</p>
+                <span asp-validation-for="Icon"></span>
+
+            </div>
+        </div>
+
+        <div class="flex justify-end mt-6 pt-4 border-t border-gray-200">
+            <button type="submit" class="bg-blue-600 text-white py-3 px-6 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg">
+                حفظ الفئة
+            </button>
+        </div>
+    </form>
+</div>

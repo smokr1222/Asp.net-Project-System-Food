@@ -1,0 +1,204 @@
+﻿@using systemFood.Models.MultiModel
+@model ProductAndCatogry
+
+@{
+    ViewData["Title"] = "MineExtras";
+}
+
+
+
+<div class="flex-1  flex space-x-6">
+
+
+    <aside class="w-64 bg-white shadow-lg p-6 flex flex-col">
+
+        <h1 class="text-3xl font-bold text-gray-800">الإعدادات</h1>
+        <nav class="flex flex-col space-y-2">
+            <a  class="flex items-center space-x-3 p-3 rounded-lg settings-sub-link text-gray-700 hover:bg-gray-100" data-setting-target="product-management">
+                <i class="fas fa-boxes text-xl"></i>
+                <span class="font-medium">إدارة المنتجات</span>
+            </a>
+            <a class="flex items-center space-x-3 p-3 rounded-lg settings-sub-link text-gray-700 hover:bg-gray-100" data-setting-target="notification">
+                <i class="fas fa-bell text-xl"></i>
+                <span class="font-medium">الإشعارات</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" data-setting-target="profile">
+                <i class="fas fa-user-circle text-xl"></i>
+                <span class="font-medium">الملف الشخصي</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" data-setting-target="language">
+                <i class="fas fa-language text-xl"></i>
+                <span class="font-medium">اللغة</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 rounded-lg settings-sub-link bg-blue-100 text-blue-600 shadow-md" data-setting-target="extras">
+                <i class="fas fa-plus-circle text-xl"></i>
+                <span class="font-medium">إضافات</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" data-setting-target="permissions-rules">
+                <i class="fas fa-user-shield text-xl"></i>
+                <span class="font-medium">الأذونات والقواعد</span>
+            </a>
+        </nav>
+
+    </aside>
+
+
+
+    <section class="flex-1 bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+
+        <div id="setting-content-extras" class="setting-content flex-col">
+            <!-- منطقة المحتوى الرئيسية (Main Content Area) -->
+            <div class="main-content flex-grow-1">
+                <div class="header-section">
+                    <h2>إدارة الإضافات</h2>
+                    <button type="button" class="btn btn-primary btn-add-new"  onclick="ExtrasCreate()">
+                        <i class="bi bi-plus-circle-fill me-2"></i> إضافة إضافة جديدة
+                    </button>
+                </div>
+
+
+
+
+
+                <!-- تبويبات الفئات حسب المنتج (Product Category Tabs) -->
+                       
+                  
+
+                <!-- تبويبات الفئات -->
+                <ul class="nav nav-tabs mb-4" id="extraCategoriesTab" role="tablist">
+                    @for (int i = 0; i < Model.Category.Count; i++)
+                    {
+                        var cat = Model.Category[i];
+                        var activeClass = i == 0 ? "active" : "";
+                        var selected = i == 0 ? "true" : "false";
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link @activeClass"
+                                    id="tab-@cat.Id"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#tab-content-@cat.Id"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="tab-content-@cat.Id"
+                                    aria-selected="@selected">
+                                إضافات @cat.Name
+                            </button>
+                        </li>
+                    }
+                </ul>
+
+                <!-- محتوى التبويبات -->
+                <div class="tab-content" id="extraCategoriesTabContent">
+                    @for (int i = 0; i < Model.Category.Count; i++)
+                    {
+                        var cat = Model.Category[i];
+                        var activeClass = i == 0 ? "show active" : "";
+
+                        <div class="tab-pane fade @activeClass"
+                             id="tab-content-@cat.Id"
+                             role="tabpanel"
+                             aria-labelledby="tab-@cat.Id">
+
+                            <h4 class="mb-3">إضافات خاصة بـ @cat.Name</h4>
+
+                            @if (cat.IExtras != null && cat.IExtras.Any())
+                            {
+                                foreach (var Extras in cat.IExtras)
+                                {
+                                    <div class="extra-item mb-3">
+                                        <div class="extra-info">
+                                            <h5>@Extras.Name</h5>
+                                            <p class="text-muted">السعر: YER @Extras.Price</p>
+                                        </div>
+                                        <div class="extra-actions mt-2">
+                                            <button class="btn btn-outline-primary btn-sm me-2" asp-action="Update" asp-controller="Extras" asp-route-Id="@Extras.Id" onclick="ExtrasUpdate(@Extras.Id)">
+                                                <i class="bi bi-pencil"></i> تعديل
+                                            </button>
+                                            <a class="btn btn-outline-danger btn-sm js-delete" data-id="@Extras.Id">
+                                                <i class="bi bi-trash"></i> حذف
+                                            </a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <p class="text-muted">لا توجد إضافات لهذه الفئة.</p>
+                            }
+                        </div>
+                    }
+                </div>
+
+                    
+            
+                 
+                </div>
+</div>
+<div id="setting-content-permissions-rules" class="setting-content hidden">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">الأذونات والقواعد</h2>
+    <p class="text-gray-600">سيتم وضع محتوى الأذونات والقواعد هنا.</p>
+</div>
+
+</section>
+</div>
+
+
+<div id="modalContainer1"></div>
+
+@section Scripts {
+<script>
+
+    function ExtrasCreate() {
+                fetch('/Extras/Create/')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('modalContainer1').innerHTML = html;
+                    var modal = new bootstrap.Modal(document.getElementById('ExtrasCreate'));
+                    modal.show();
+                });
+        }
+
+
+
+
+           function ExtrasUpdate(id) {
+            fetch('/Extras/Update/'+id)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('modalContainer1').innerHTML = html;
+                    var modal = new bootstrap.Modal(document.getElementById('ExtrasUpdate'));
+                    modal.show();
+                });
+        }
+
+
+
+
+
+
+        $(document).ready(function (){
+
+            $('.js-delete').on('click',function(){
+                var btn=$(this);
+
+                $.ajax({
+
+                    url:`/Extras/Delete/${btn.data('id')}`,
+                    method:'DELETE',
+
+                    success:function() {
+                         alert('success');
+                         location.reload(); // ← يعمل Refresh كامل للصفحة
+
+                    },
+                    error:function(){
+
+                             alert('error');
+
+                    }
+
+                });
+            });
+        });
+
+</script>
+}

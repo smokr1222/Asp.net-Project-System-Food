@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<mine class="flex-1 p-6">
+
+<div class="flex-1 flex space-x-6 w-full">
+<!-- Settings View - Acts as a distinct page -->
+<div id="settings-view" class="flex-1  flex space-x-6">
+    <!-- Settings Sidebar -->
+    <aside class="w-64 bg-white shadow-lg p-6 flex flex-col">
+        <h1 class="text-3xl font-bold text-gray-800">الإعدادات</h1>
+        <nav class="flex flex-col space-y-2">
+            <a class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" asp-action="MineProduct" asp-controller="Settings">
+                <i class="fas fa-boxes text-xl"></i>
+                <span class="font-medium">إدارة المنتجات</span>
+            </a>
+            <a class="flex items-center space-x-3 p-3 bg-blue-100 text-blue-600 rounded-lg shadow-md settings-sub-link" data-setting-target="notification">
+                <i class="fas fa-bell text-xl"></i>
+                <span class="font-medium">الإشعارات</span>
+            </a>
+            <a class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" asp-action="MineProfile" asp-controller="Settings">
+                <i class="fas fa-user-circle text-xl"></i>
+                <span class="font-medium">الملف الشخصي</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" data-setting-target="language">
+                <i class="fas fa-language text-xl"></i>
+                <span class="font-medium">اللغة</span>
+            </a>
+            <a class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" asp-action="MineExtras" asp-controller="Settings">
+                <i class="fas fa-plus-circle text-xl"></i>
+                <span class="font-medium">إضافات</span>
+            </a>
+            <a class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" data-setting-target="permissions-rules">
+                <i class="fas fa-user-shield text-xl"></i>
+                <span class="font-medium">الأذونات والقواعد</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Settings Content Area -->
+    <section class="flex-1 bg-white rounded-2xl shadow-lg p-6 flex flex-col ">
+        
+    </section>
+</div>
+
+
+</div>
+</mine>

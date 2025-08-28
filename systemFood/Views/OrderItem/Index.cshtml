@@ -1,0 +1,70 @@
+﻿@model List<Orders>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="flex-1  flex-col">
+    <section class="flex-1 bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+        <!-- Header/Search -->
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">قائمة الطلبات</h1>
+            <div class="flex items-center space-x-3">
+                <div class="relative">
+                    <input type="text" placeholder="ابحث عن معرف الطلب" class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <img src="https://placehold.co/40x40/cbd5e1/4a5568?text=AH" alt="صورة المستخدم الرمزية" class="w-10 h-10 rounded-full border-2 border-blue-500">
+                    <span class="font-medium text-gray-700">علي هاني</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Status Tabs -->
+        <div class="flex space-x-4 mb-6 overflow-x-auto no-scrollbar pb-2">
+            <button class="flex-shrink-0 px-6 py-3 bg-blue-600 text-white rounded-xl shadow-md">قيد التنفيذ</button>
+            <button class="flex-shrink-0 px-6 py-3 bg-gray-100 text-gray-700 rounded-xl shadow-sm hover:bg-gray-200">مكتمل</button>
+
+        </div>
+
+        <!-- Order List Items -->
+        <div class="flex-grow scrollable-content">
+            <!-- مثال بطاقة الطلب -->
+          
+
+            @foreach (var ListOrderItem in Model)
+            {
+                <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 mb-4 flex">
+                    <div class="flex-1 pr-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-semibold text-lg text-gray-800">معرف الطلب: @ListOrderItem.OrderId</h3>
+                            <span class="bg-green-100 text-green-600 text-sm px-3 py-1 rounded-full">اخذ</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2">@ListOrderItem.OrderDate مساءً</p>
+
+                             <p class="text-2xl font-bold text-blue-600">@ListOrderItem.TotalAmount YER</p>
+
+
+
+                </div>
+                    <div class="w-48 space-y-2">
+                        @foreach (var ProductList in ListOrderItem.Items)
+                        {
+                             <div class="flex items-center justify-between text-sm">
+                                <img src="@($"{Settingss._ImgeFolderToServer}/{ProductList.Product.Cover}")" alt="@ProductList.Product.Name" class="w-8 h-8 rounded-lg">
+                                <span>@ProductList.Product.Name ( x @ProductList.Quantity)</span>
+                                <span class="text-gray-700">@ProductList.Product.Price YER</span>
+                             </div>
+                        }
+                       
+                       
+                    </div>
+                </div>
+
+            }
+          
+        </div>
+    </section>
+</div>

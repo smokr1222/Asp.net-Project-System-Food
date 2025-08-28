@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "MineProfile";
+}
+
+<div id="settings-view" class="flex-1  flex space-x-6">
+    <!-- Settings Sidebar -->
+    <aside class="w-64 bg-white shadow-lg p-6 flex flex-col">
+        <h1 class="text-3xl font-bold text-gray-800">الإعدادات</h1>
+        <nav class="flex flex-col space-y-2">
+            <a class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" asp-action="MineProduct" asp-controller="Settings">
+                <i class="fas fa-boxes text-xl"></i>
+                <span class="font-medium">إدارة المنتجات</span>
+            </a>
+            <a class="flex items-center space-x-3 p-3 bg-blue-100 text-blue-600 rounded-lg shadow-md settings-sub-link" data-setting-target="notification">
+                <i class="fas fa-bell text-xl"></i>
+                <span class="font-medium">الإشعارات</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" asp-action="MineProduct" asp-controller="Settings" data-setting-target="profile">
+                <i class="fas fa-user-circle text-xl"></i>
+                <span class="font-medium">الملف الشخصي</span>
+            </a>
+            <a class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" data-setting-target="language">
+                <i class="fas fa-language text-xl"></i>
+                <span class="font-medium">اللغة</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" asp-action="MineExtras" asp-controller="Settings">
+                <i class="fas fa-plus-circle text-xl"></i>
+                <span class="font-medium">إضافات</span>
+            </a>
+            <a class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" data-setting-target="permissions-rules">
+                <i class="fas fa-user-shield text-xl"></i>
+                <span class="font-medium">الأذونات والقواعد</span>
+            </a>
+        </nav>
+    </aside>
+
+    <section class="flex-1 bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+
+
+
+
+        <div id="setting-content-profile" class="setting-content  flex-col">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">إعدادات الملف الشخصي</h2>
+            <div class="flex-grow scrollable-content">
+                <div class="space-y-4">
+                    <div>
+                        <label for="profile-name" class="block text-gray-700 text-sm font-semibold mb-2">الاسم</label>
+                        <input type="text" id="profile-name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="اسم المستخدم">
+                    </div>
+                    <div>
+                        <label for="profile-email" class="block text-gray-700 text-sm font-semibold mb-2">البريد الإلكتروني</label>
+                        <input type="email" id="profile-email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="user@example.com">
+                    </div>
+                    <div>
+                        <label for="profile-phone" class="block text-gray-700 text-sm font-semibold mb-2">رقم الهاتف</label>
+                        <input type="tel" id="profile-phone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="+966XXXXXXXXX">
+                    </div>
+                    <div>
+                        <label for="profile-role" class="block text-gray-700 text-sm font-semibold mb-2">الدور</label>
+                        <input type="text" id="profile-role" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-100 cursor-not-allowed" value="مدير" readonly>
+                    </div>
+                    <div class="flex justify-end mt-6 pt-4 border-t border-gray-200">
+                        <button id="save-profile-button" class="bg-blue-600 text-white py-3 px-6 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg">
+                            حفظ التغييرات
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

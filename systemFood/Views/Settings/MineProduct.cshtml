@@ -1,0 +1,222 @@
+﻿@using systemFood.Models.MultiModel
+
+@model ProductAndCatogry
+@{
+    ViewData["Title"] = "MineProduct";
+}
+
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<div id="settings-view" class="flex-1  flex space-x-6">
+    <!-- Settings Sidebar -->
+    <aside class="w-64 bg-white shadow-lg p-6 flex flex-col">
+        <h1 class="text-3xl font-bold text-gray-800">الإعدادات</h1>
+        <nav class="flex flex-col space-y-2">
+            <a class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" asp-action="MineProduct" asp-controller="Settings">
+                <i class="fas fa-boxes text-xl"></i>
+                <span class="font-medium">إدارة المنتجات</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 bg-blue-100 text-blue-600 rounded-lg shadow-md settings-sub-link" data-setting-target="notification">
+                <i class="fas fa-bell text-xl"></i>
+                <span class="font-medium">الإشعارات</span>
+            </a>
+            <a class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" asp-action="MineProfile" asp-controller="Settings" data-setting-target="profile">
+                <i class="fas fa-user-circle text-xl"></i>
+                <span class="font-medium">الملف الشخصي</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" data-setting-target="language">
+                <i class="fas fa-language text-xl"></i>
+                <span class="font-medium">اللغة</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" asp-action="MineExtras" asp-controller="Settings">
+                <i class="fas fa-plus-circle text-xl"></i>
+                <span class="font-medium">إضافات</span>
+            </a>
+            <a  class="flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg settings-sub-link" data-setting-target="permissions-rules">
+                <i class="fas fa-user-shield text-xl"></i>
+                <span class="font-medium">الأذونات والقواعد</span>
+            </a>
+        </nav>
+    </aside>
+
+
+
+
+    <section class="flex-1 bg-white rounded-2xl shadow-lg p-6 flex flex-col overflow-hidden">
+        <div id="setting-content-product-management" class="setting-content">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">إدارة المنتجات</h2>
+
+            <!-- ✅ Scroll صف أفقي ثابت للفئات -->
+            <div class="relative mb-8 pb-3">
+                <div class="overflow-x-auto max-w-full">
+                    <div class="flex gap-4 w-max pr-4">
+                        @foreach (var Catogry in Model.Category)
+                        {
+                            <div class="dropdown inline-block" id="row-@Catogry.Id">
+                                <button class="flex flex-col items-center justify-center p-3 w-28 h-28 rounded-2xl shadow-md bg-gray-600 text-white"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                    <i class="@Catogry.Icon text-2xl mb-2"></i>
+                                    <span>@Catogry.Name</span>
+                                </button>
+                                <ul class="dropdown-menu mb-4 mt-0 z-50" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a class="dropdown-item text-danger js-delete2" data-id="@Catogry.Id" data-row="#row-@Catogry.Id">
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+
+                        <!-- زر إضافة فئة -->
+                        <a asp-action="Create" asp-controller="Category"
+                        class="flex-shrink-0 flex flex-col items-center justify-center m-2 p-3 w-28 h-28 bg-gray-50 text-gray-400 rounded-2xl shadow-md border-dashed border-2 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
+                            <i class="fas fa-plus text-4xl mb-4"></i>
+                            <span class="text-xl font-semibold">فئة</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🧩 بطاقات إدارة المنتجات -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-grow" id="product-management-list">
+                <!-- بطاقة إضافة طبق جديد -->
+                <a class="bg-gray-50 p-6 rounded-xl shadow-md border border-gray-200 flex flex-col items-center justify-center text-center h-64 border-dashed border-2 cursor-pointer hover:bg-gray-100 transition-colors duration-200"
+                asp-action="Create" asp-controller="Product">
+                    <i class="fas fa-plus text-4xl text-gray-400 mb-4"></i>
+                    <span class="text-xl font-semibold text-gray-600">إضافة طبق جديد</span>
+                </a>
+
+@*                 @foreach (var item in Model.Product)
+ *@   
+               @for (int i = 0; i < Model.Product.Count;i++)
+                {
+                    <div class="product-management-card bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center">
+                      
+                            <img src="@($"{Settingss._ImgeFolderToServer}/{Model.Product[i].Cover}")" class="w-24 h-24 rounded-full mb-3 object-cover" />
+
+                     
+                       
+                        <h3 class="font-semibold text-lg text-gray-800">@Model.Product[i].Name</h3>
+                        <p class="text-gray-600 text-sm mb-2">@Model.Product[i].Description</p>
+                        <p class="text-gray-600 text-sm mb-2">الكمية: @Model.Product[i].Stock</p>
+                        <p class="text-xl font-bold text-blue-600 mb-4">@Model.Product[i].Price YAM</p>
+                        <div class="flex space-x-2 w-full justify-center">
+                            <a class="flex-1 bg-gray-100 text-blue-600 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-200 flex items-center justify-center space-x-2"
+                               asp-action="Update" asp-controller="Product" asp-route-id="@Model.Product[i].Id">
+                                <i class="fas fa-edit"></i>
+                                <span>تعديل الأطباق</span>
+                            </a>
+                            <a class="flex-1 bg-red-100 text-red-600 py-2 rounded-lg hover:bg-red-200 transition-colors duration-200 flex items-center justify-center space-x-2 js-delete"
+                               data-id="@Model.Product[i].Id">
+                                <i class="fas fa-trash-alt"></i>
+                                <span>حذف</span>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+
+
+
+
+
+
+@section Scripts {
+
+
+
+
+    <partial name="_ValidationScriptsPartial" />
+
+
+    <script>
+
+
+
+
+        $(document).ready(function (){
+
+            $('.js-delete').on('click',function(){
+                var btn=$(this);
+
+                $.ajax({
+
+                    url:`/Product/Delete/${btn.data('id')}`,
+                    method:'DELETE',
+
+                    success:function() {
+                         alert('success');
+                         location.reload(); // ← يعمل Refresh كامل للصفحة
+
+                    },
+                    error:function(){
+
+                             alert('error');
+
+                    }
+
+                });
+            });
+        });
+
+
+
+
+
+
+        $(document).ready(function () {
+            $('.js-delete2').on('click', function (e) {
+                e.preventDefault(); // لمنع الانتقال للرابط
+                var btn = $(this);
+                var id = btn.data('id');
+                var rowSelector = btn.data('row');
+
+                if (confirm("هل أنت متأكد من الحذف؟")) {
+                    $.ajax({
+                        url: `/Category/Delete/${id}`,
+                        method: 'DELETE',
+                        success: function () {
+                            $(rowSelector).remove();
+                            $('#result').html('<div class="alert alert-success">تم الحذف بنجاح</div>');
+                        },
+                        error: function () {
+                            alert('حدث خطأ أثناء الحذف');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+}
+

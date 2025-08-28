@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "inventory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body class="flex min-h-screen bg-gray-100">
+
+    
+
+    <!-- Content -->
+    <main class="flex-1 mr-20 p-8">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold">المخزون</h1>
+            <!-- زر إضافة -->
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700">
+                 إضافة مخزن جديد
+            </button>
+        </div>
+
+        <div class="space-y-4">
+            <!-- بطاقة المواد الخام -->
+            <div class="bg-white p-4 shadow rounded-md flex justify-between items-center">
+                <div>
+                    <h2 class="text-xl font-semibold">المواد الخام</h2>
+                </div>
+                <!-- أزرار التحكم -->
+                <div class="space-x-2 space-x-reverse">
+                    <button class="edit-category-btn text-sm text-blue-600 hover:text-blue-800 transition">تعديل</button>
+                    <button class="delete-category-btn text-sm text-red-600 hover:text-red-800 transition">حذف</button>
+                    <button class="view-items-btn px-3 py-1 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition">عرض العناصر</button>
+
+                </div>
+            </div>
+
+        
+        </div>
+    </main>
+
+</body>

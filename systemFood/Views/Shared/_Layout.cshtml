@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Cashier System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/defult.styles.css" asp-append-version="true" />
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.min.css" rel="stylesheet" />
+        <!-- Tailwind CSS CDN -->
+        <script src="~/lib/bootstrap/dist/js/tailwindcs.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+       
+    </head>
+    <body class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-20 bg-white shadow-lg p-4 flex flex-col items-center justify-between rounded-r-2xl">
+            <div class="flex flex-col items-center space-y-6">
+                <div class="p-2 bg-blue-500 rounded-full mb-4">
+                    <img src="https://placehold.co/32x32/ffffff/000000?text=Logo" alt="شعار" class="w-8 h-8 rounded-full">
+                </div>
+            <a class="p-3 bg-blue-100 rounded-lg text-blue-600 shadow-md sidebar-link" asp-action="Index" asp-controller="Home">
+                    <i class="fas fa-th-large text-xl"></i> <!-- أيقونة لوحة القيادة -->
+                </a>
+            <a class="p-3 text-gray-500 hover:bg-gray-100 rounded-lg sidebar-link" asp-action="Index" asp-controller="OrderItem">
+                    <i class="fas fa-clipboard-list text-xl"></i> <!-- أيقونة قائمة الطلبات -->
+                </a>
+            <a class="p-3 text-gray-500 hover:bg-gray-100 rounded-lg sidebar-link" asp-action="Index" asp-controller="History" >
+                    <i class="fas fa-history text-xl"></i> <!-- أيقونة سجل الطلبات -->
+                </a>
+            </div>
+            <div class="flex flex-col items-center space-y-6">
+            <a class="p-3 text-gray-500 hover:bg-gray-100 rounded-lg sidebar-link" asp-action="Index" asp-controller="Settings">
+                    <i class="fas fa-cog text-xl"></i> <!-- أيقونة الإعدادات -->
+                </a>
+                <a class="p-3 text-red-500 hover:bg-red-100 rounded-lg">
+                    <i class="fas fa-sign-out-alt text-xl"></i> <!-- أيقونة تسجيل الخروج -->
+                </a>
+            </div>
+        </aside>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/opersion.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

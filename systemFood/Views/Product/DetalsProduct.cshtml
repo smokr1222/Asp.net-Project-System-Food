@@ -1,0 +1,134 @@
+﻿@using systemFood.ViewModel.Product
+<!-- Order Details Modal -->
+@model SelectProductAndSelectExtra
+@{
+    Layout = "";
+}
+
+@{
+    int index = 0;
+}
+
+<div class="modal fade" id="productDetailsModal" tabindex="-1" aria-hidden="true" dir="rtl">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content p-4" style="border-radius: 20px;">
+            <div class="modal-body">
+                <div class=" modal-content relative w-full sm:w-22/12 md:w-8/4 lg:w-4/2 p-6 bg-white rounded-2xl shadow-xl flex flex-col">
+                    <button class="close-button absolute top-4 right-6 text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">تفاصيل الطلب</h2>
+                    <form method="post" asp-action="SelectExtras" asp-controller="Extras">
+
+                        <div class="flex flex-col md:flex-row gap-6 mb-6">
+                            <!-- Item Image and Name -->
+                            <div class="md:w-1/3 flex flex-col items-center justify-center bg-gray-50 p-4 rounded-xl">
+                                <img id="detail-item-image" src="@($"{Settingss._ImgeFolderToServer}/{Model.Products.Cover}")" class="w-32 h-32 rounded-full mb-4 object-cover">
+                                <h3 id="detail-item-name" asp-for="@Model.Products.Name" class="font-bold text-2xl text-gray-800 text-center">@Model.Products.Name</h3>
+                                <p id="detail-item-description" class="text-gray-600 text-sm text-center"> @Model.Products.Description</p>
+                            </div>
+
+                            <!-- Options: Extra, Add Note, Size -->
+                            <div class="md:w-2/3 flex flex-col space-y-4">
+                                <!-- Extras Section -->
+
+                                <div>
+                                    <h4 class="font-semibold text-xl text-gray-800 mb-3">إضافات</h4>
+                                    <div class="grid grid-cols-2 gap-3" id="extra-options">
+
+         
+
+
+
+
+
+
+
+
+                                        @for (int j = 0; j < Model.categories.Count; j++)
+                                        {
+                                            <input type="hidden" asp-for="@Model.Products.Id" />
+
+                                            var currentCategory = Model.categories[j];
+                                            <h3 class="text-lg font-bold mt-4 mb-2">@currentCategory.Name</h3>
+
+                                            @foreach (var extra in Model.Extras.Where(e => e.CatogryID == currentCategory.Id))
+                                            {
+                                                <div class="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg hover:bg-gray-200">
+                                                    <input type="checkbox" name="Extras[@index].IsSelected" value="true"
+                                                           class="form-checkbox h-5 w-5 text-blue-600 rounded" />
+
+                                                    <span class="text-gray-700">@extra.Name (+@extra.Price YER)</span>
+
+                                                    <input type="hidden" name="Extras[@index].Id" value="@extra.Id" />
+                                                    <input type="hidden" name="Extras[@index].Name" value="@extra.Name" />
+                                                    <input type="hidden" name="Extras[@index].Price" value="@extra.Price" />
+                                                    <input type="hidden" name="Extras[@index].CatogryID" value="@extra.CatogryID" />
+                                                </div>
+
+                                                index++;
+                                            }
+                                        }
+
+
+
+
+
+
+
+
+
+                     
+                    </div>
+                </div>
+
+                <!-- Add Note -->
+                <div>
+                    <h4 class="font-semibold text-xl text-gray-800 mb-3">إضافة ملاحظة</h4>
+                        <textarea asp-for="Descrebtions" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="أضف تعليمات خاصة..."></textarea>
+                </div>
+
+                <!-- Size Options -->
+                <div>
+                    <h4 class="font-semibold text-xl text-gray-800 mb-3">الحجم</h4>
+                    <div class="flex space-x-3" id="size-options">
+                        <!-- سيتم تعبئة أزرار الراديو للأحجام هنا -->
+                        <label class="flex-1 text-center cursor-pointer">
+                            <input type="radio" name="size" value="half" data-price-multiplier="0.8" class="hidden peer" checked>
+                            <span class="block px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 transition-colors duration-200">نصف</span>
+                        </label>
+                        <label class="flex-1 text-center cursor-pointer">
+                            <input type="radio" name="size" value="m" data-price-multiplier="1.0" class="hidden peer">
+                            <span class="block px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 transition-colors duration-200">M</span>
+                        </label>
+                        <label class="flex-1 text-center cursor-pointer">
+                            <input type="radio" name="size" value="l" data-price-multiplier="1.2" class="hidden peer">
+                            <span class="block px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 transition-colors duration-200">L</span>
+                        </label>
+                        <label class="flex-1 text-center cursor-pointer">
+                            <input type="radio" name="size" value="xl" data-price-multiplier="1.5" class="hidden peer">
+                            <span class="block px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 transition-colors duration-200">XL</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Total and Done Button -->
+        <div class="flex justify-between items-center mt-6 pt-4 border-t border-gray-200">
+            <div class="flex-1 text-center">
+                <span class="text-gray-600 text-lg"> الإجمالي</span>
+
+                <p  class="font-bold text-3xl text-blue-600">@Model.Total</p>
+                                <input type="hidden" asp-for="@Model.Total" />
+            </div>
+            <button type="submit" class="w-1/2 bg-blue-600 text-white py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg">
+                تم
+            </button>
+        </div>
+                    </form>
+
+    </div>
+</div>
+</div>
+</div>
+</div>

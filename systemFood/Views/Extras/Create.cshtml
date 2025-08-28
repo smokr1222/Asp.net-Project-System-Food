@@ -1,0 +1,60 @@
+﻿@using systemFood.ViewModel.Extras
+@model EditExtrasViewModel
+
+@{
+
+    Layout = null;
+}
+
+
+<form method="post" asp-action="Create" asp-controller="Extras" enctype="multipart/form-data">
+
+
+    <div class="modal fade" id="ExtrasCreate" tabindex="-1" aria-hidden="true" dir="rtl">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" >إضافة إضافة جديدة</h5>
+                    <button type="button" class="btn-close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label asp-for="TitleExtra" class="form-label">اسم الإضافة</label>
+                        <input type="text" asp-for="TitleExtra" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Prise" class="form-label">السعر (YER)</label>
+                        <input type="number" asp-for="Prise" class="form-control" step="0.01">
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="SelectCatogry" class="form-label">فئة الإضافة</label>
+                        
+                        <select class="form-select" asp-for="CatogryID" >
+                            <option selected disabled value="">اختر الفئة...</option>
+
+                            @foreach (var catogry in Model.SelectCatogry)
+                            {
+                                <option value="@catogry.Id">@catogry.Name </option>
+
+                            }
+
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit"  class="btn btn-secondary">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ الإضافة</button>
+                </div>
+
+            </div>
+        </div>
+
+
+</div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

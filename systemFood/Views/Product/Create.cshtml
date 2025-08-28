@@ -1,0 +1,108 @@
+﻿@using systemFood.ViewModel.Product
+@model AddNewProductViewModel
+
+
+
+
+    <a class="close-button absolute top-4 right-6 text-gray-500 hover:text-gray-800 text-3xl" asp-action="MineProduct" asp-controller="Settings">&times;</a>
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center" >إضافة طبق جديد</h2>
+
+        <form method="post" enctype="multipart/form-data">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Left Column: Image Upload, Item ID, Name, Details -->
+            <div class="flex flex-col space-y-4">
+                <div class="bg-gray-50 p-6 rounded-xl border border-dashed border-gray-300 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors duration-200" style="min-height: 150px;">
+                    <input type="file"  id="dish"  asp-for="Cover" >
+                    <label asp-for="Cover" class="flex flex-col items-center justify-center cursor-pointer">
+                        <i class="fas fa-camera text-4xl text-gray-400 mb-2"></i>
+                        <span class="text-gray-600">انقر لتحميل الصورة</span>
+                    <img src="" alt="Cover" class="cover-preview w-24 h-24 rounded-full d-none mt-4 object-cover">
+                    </label>
+                </div>
+               
+                <div>
+                    <label   class="block text-gray-700 text-sm font-semibold mb-2" asp-for="Name">الاسم</label>
+                    <input type="text"  asp-for="Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="اسم الطبق">
+                </div>
+                <div>
+                    <label asp-for="Description" class="block text-gray-700 text-sm font-semibold mb-2">التفاصيل/الوصف</label>
+                    <textarea asp-for="Description" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="وصف مفصل للطبق..."></textarea>
+                </div>
+            </div>
+
+            <!-- Right Column: Height, Width, Size, Count, Price, Category, Time, Calories -->
+            <div class="flex flex-col space-y-4">
+               
+                <div>
+                    <label  asp-for="Size" class="block text-gray-700 text-sm font-semibold mb-2">الحجم</label>
+                <select asp-for="Size" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <option value="">-اختر-</option>
+                        <option value="small">صغير</option>
+                        <option value="medium">متوسط</option>
+                        <option value="large">كبير</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label asp-for="Stock" class="block text-gray-700 text-sm font-semibold mb-2">العدد</label>
+                         <input asp-for="Stock" type="text"  class="w-full p-3 border border-gray-300 rounded-lg bg-gray-100 "placeholder="الكمية" >
+                    </div>
+                    <div>
+                        <label asp-for="Prise" class="block text-gray-700 text-sm font-semibold mb-2">السعر</label>
+                        <input type="number" asp-for="Prise" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="00.00">
+                    </div>
+                </div>
+
+            <div>
+                <label asp-for="CatogryId" class="block text-gray-700 text-sm font-semibold mb-2">فئة</label>
+                <select asp-for="CatogryId" asp-items="@Model.Catogry" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <option value="">-اختر-</option>
+                
+                </select>
+            </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label asp-for="CompletionTime" class="block text-gray-700 text-sm font-semibold mb-2">وقت التحضير (دقيقة)</label>
+                    <input type="number" asp-for="CompletionTime" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="مثال: 15">
+                    </div>
+                    <div>
+                        <label asp-for="Calories" class="block text-gray-700 text-sm font-semibold mb-2">السعرات الحرارية</label>
+                    <input type="number" asp-for="Calories" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="مثال: 500">
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2 mt-4">
+                <input type="checkbox" asp-for="IsTakeaway" class="form-checkbox h-5 w-5 text-blue-600 rounded">
+                <label asp-for="IsTakeaway" class="text-gray-700">يمكن التوصيل</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-end mt-6 pt-4 border-t border-gray-200">
+            <button class="bg-blue-600 text-white py-3 px-6 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg">
+                حفظ الطبق
+            </button>
+        </div>
+    </form>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+
+        $(document).ready(function(){
+
+            $('#Cover').on('Change',function(){
+                $('.cover-preview').attr('src',window.URL.createObjectURL(this.files[0])).removeClass('d-none');
+            
+            });
+        
+        });
+
+
+    </script>
+
+
+}
