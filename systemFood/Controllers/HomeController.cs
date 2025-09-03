@@ -143,14 +143,6 @@ namespace systemFood.Controllers
 
 
 
-        public IActionResult Stores()
-        {
-
-            return View();
-        }
-
-
-
 
 
 

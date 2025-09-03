@@ -48,8 +48,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AlShaheen/source/repos/systemFood/systemFood/Views/Home/Stores.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdG9yZXMuY3NodG1s
+[C:/Users/AlShaheen/source/repos/systemFood/systemFood/Views/inventory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcaW52ZW50b3J5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AlShaheen/source/repos/systemFood/systemFood/Views/inventory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcaW52ZW50b3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/AlShaheen/source/repos/systemFood/systemFood/Views/OrderItem/Index.cshtml]
