@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\views\\inventory\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\views\\inventory\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\views\\inventory\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\views\\inventory\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\views\\inventory\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\views\\inventory\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\views\\product\\detalsproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\views\\product\\detalsproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,14 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|solutionrelative:systemfood\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D7E8FC14-2ED4-4AC5-89E4-6CF1BF2ACE4D}|systemFood\\systemFood.csproj|c:\\users\\alshaheen\\source\\repos\\systemfood\\systemfood\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 26,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -81,45 +85,64 @@
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "DetalsProduct.cshtml",
+              "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\Product\\DetalsProduct.cshtml",
+              "RelativeDocumentMoniker": "systemFood\\Views\\Product\\DetalsProduct.cshtml",
+              "ToolTip": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\Product\\DetalsProduct.cshtml",
+              "RelativeToolTip": "systemFood\\Views\\Product\\DetalsProduct.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-03T23:15:50.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\inventory\\Create.cshtml",
               "RelativeDocumentMoniker": "systemFood\\Views\\inventory\\Create.cshtml",
               "ToolTip": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\inventory\\Create.cshtml",
               "RelativeToolTip": "systemFood\\Views\\inventory\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-02T08:56:26.038Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\inventory\\Index.cshtml",
               "RelativeDocumentMoniker": "systemFood\\Views\\inventory\\Index.cshtml",
-              "ToolTip": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\inventory\\Index.cshtml",
-              "RelativeToolTip": "systemFood\\Views\\inventory\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\inventory\\Index.cshtml*",
+              "RelativeToolTip": "systemFood\\Views\\inventory\\Index.cshtml*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-01T14:48:53.165Z"
+              "WhenOpened": "2025-09-01T14:48:53.165Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "inventoryController.cs",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Controllers\\inventoryController.cs",
               "RelativeDocumentMoniker": "systemFood\\Controllers\\inventoryController.cs",
               "ToolTip": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Controllers\\inventoryController.cs",
               "RelativeToolTip": "systemFood\\Controllers\\inventoryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T14:43:50.672Z"
+              "WhenOpened": "2025-09-01T14:43:50.672Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "systemFood\\Views\\Shared\\_Layout.cshtml",
@@ -131,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "systemFood\\Controllers\\CategoryController.cs",
@@ -143,19 +166,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\Category\\Create.cshtml",
               "RelativeDocumentMoniker": "systemFood\\Views\\Category\\Create.cshtml",
               "ToolTip": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\Category\\Create.cshtml",
               "RelativeToolTip": "systemFood\\Views\\Category\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T10:16:40.274Z"
+              "WhenOpened": "2025-08-26T10:16:40.274Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Program.cs",
               "RelativeDocumentMoniker": "systemFood\\Program.cs",
@@ -167,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ExtraServices.cs",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Services\\ExtraServices.cs",
               "RelativeDocumentMoniker": "systemFood\\Services\\ExtraServices.cs",
@@ -179,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "DescaondService.cs",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Services\\DescaondService.cs",
               "RelativeDocumentMoniker": "systemFood\\Services\\DescaondService.cs",
@@ -191,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "systemFood\\Services\\CategoryService.cs",
@@ -203,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "systemFood\\Controllers\\ProductController.cs",
@@ -215,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "systemFood\\Controllers\\HomeController.cs",
@@ -227,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "SessionExtensions.cs",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Session\\SessionExtensions.cs",
               "RelativeDocumentMoniker": "systemFood\\Session\\SessionExtensions.cs",
@@ -239,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "UnitOfWorkServices.cs",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\UnitofWork\\UnitOfWorkServices.cs",
               "RelativeDocumentMoniker": "systemFood\\UnitofWork\\UnitOfWorkServices.cs",
@@ -251,15 +275,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "systemFood\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\AlShaheen\\source\\repos\\systemFood\\systemFood\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "systemFood\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAAEBAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-05T08:15:32.271Z"
+              "WhenOpened": "2025-08-05T08:15:32.271Z",
+              "EditorCaption": ""
             }
           ]
         }

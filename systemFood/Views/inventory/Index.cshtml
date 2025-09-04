@@ -13,9 +13,9 @@
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-3xl font-bold">المخزون</h1>
             <!-- زر إضافة -->
-            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700">
+            <a class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700" asp-action="Create" asp-controller="inventory"   onclick="Addinventory()">
                 إضافة مخزن جديد
-            </button>
+            </a>
         </div>
 
         <div class="space-y-4">
@@ -38,4 +38,35 @@
     </main>
 
 </body>
+
+
+
+
+
+
+
+<div id="modalContainer1"></div>
+
+
+
+
+<partial name="_ValidationScriptsPartial" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+<script>
+
+        function Addinventory() {
+        fetch('/inventory/Create/')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('modalContainer1').innerHTML = html;
+                var modal = new bootstrap.Modal(document.getElementById('AddNewinventory1'));
+                modal.show();
+            });
+    }
+</script>
+
 
